@@ -40,12 +40,11 @@ for (i = 1; i < 101; i++){
 
 //Solution to Wednesday's Coding Challenge: Return the number of times that the string "hi" appears anywhere in the given string.
 
-var sampleText = "Hi, Jonah. Hi, Milton. Are we still on for lunch at Shilla? Hello, Caroline. Say hi to your mother for me. Is she still working at the Hilton? Howdy, Jason. Hi, Mary. Hello, Justin. Yo, Thomas! Say hi to the captain for me. HI-YA!"
+var sampleText = "Hi, Jonah. Hi, Milton. Are we still on for lunch at Shilla? Hello, Caroline. Say hi to your mother for me. Is she still working at the Hilton? Howdy, Jason. Hi, Mary. Hello, Justin. Yo, Thomas! Say hi to the captain for me! Umm, hi. Hello? Hi!"
 
 func lookForHi(textToSearch: String) -> Int {
   let textToSearchArray = Array(textToSearch)
   var hiCount : Int = 0
-  var i : Int = 0
   for character in textToSearchArray {
     if character == "h" || character == "H" {
       if let charIndex = find(textToSearchArray, character) {
@@ -55,7 +54,6 @@ func lookForHi(textToSearch: String) -> Int {
         }
       }
     }
-    i++
   }
   return hiCount
 }
