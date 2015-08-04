@@ -61,4 +61,40 @@ func lookForHi(textToSearch: String) -> Int {
 lookForHi(sampleText)
 
 
+//Solution to Thursday's coding challenge: Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+let stringSample = "X-men are mutants, not extraterrestrials. Depending on which side they're on, they go to extreme lengths to either defend or exterminate the human race. Are there any X-men who have x-ray vision, like Superman? I can't think of any examples... Are there any X-men who can play tenor sax? Or weild an ax? Or like that Kevin Spacey movie, K-PAX?"
+
+func removeEveryXExceptFirstAndLast(string: String) -> String {
+  var stringAsArray = Array(string)
+  let stringLength = stringAsArray.count
+  let firstChar = stringAsArray[0]
+  let lastCharIndex = Int(stringLength - 1)
+  let lastChar = stringAsArray[lastCharIndex]
+  stringAsArray.removeAtIndex(0)
+  let newLastCharIndex = Int(lastCharIndex - 1)
+  stringAsArray.removeAtIndex(newLastCharIndex)
+  
+  for character in stringAsArray {
+    if character == "X" || character == "x" {
+      if let charIndex = find(stringAsArray, character) {
+        let charPosition = distance(stringAsArray.startIndex, charIndex)
+        stringAsArray.removeAtIndex(charPosition)
+      }
+    }
+  }
+
+  let arrayBackToString = String(stringAsArray)
+  let stringToReturn = "\(firstChar)" + arrayBackToString + "\(lastChar)"
+ 
+  return stringToReturn
+}
+
+removeEveryXExceptFirstAndLast(stringSample)
+
+
+
+
+
+
 
