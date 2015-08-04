@@ -15,4 +15,4 @@ struct Tweet {
   let profileImageURL : String 
 }
 
-let testTweet = Tweet(text: "ummmm", username: "halo", id: "31083082", profileImageURL: "www.google.com")
+//let testTweet = Tweet(text: "ummmm", username: "halo", id: "31083082", profileImageURL: "www.google.com")

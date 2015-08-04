@@ -8,12 +8,9 @@ var moreLetters = ["a", "e", "i", "o", "u", "y"]
 
 func reversi(letters: [String]) -> [String] {
   var reversedArray = [String]()
-  var i = letters.count - 1
   
   for letter in letters {
-    let letterHolder = letters[i]
-    reversedArray.append(letterHolder)
-    i--
+    reversedArray.insert(letter, atIndex: 0)
   }
   return reversedArray
 }

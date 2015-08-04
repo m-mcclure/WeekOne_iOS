@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A0FECAEB-DAED-4122-86D1-A27232B6151E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TweetThis</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7365EBF824D6FF5C08A60BF4891AFFEFCACFFA93</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/mcclure15/twitterClone.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TweetThis/TweetThis.xcodeproj/project.xcworkspace</string>
+	<string>TweetThis/TweetThis.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7365EBF824D6FF5C08A60BF4891AFFEFCACFFA93</key>
