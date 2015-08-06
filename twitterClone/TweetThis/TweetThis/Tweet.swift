@@ -11,8 +11,7 @@ import Foundation
 struct Tweet {
   let text : String?
   let username : String
+  let screenname : String
   let id : String
   let profileImageURL : String 
 }
-
-//let testTweet = Tweet(text: "ummmm", username: "halo", id: "31083082", profileImageURL: "www.google.com")

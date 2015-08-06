@@ -90,6 +90,69 @@ func removeEveryXExceptFirstAndLast(string: String) -> String {
 removeEveryXExceptFirstAndLast(stringSample)
 
 
+//Implement a queue.
+//Below is my first solution, which only handles Ints, which I did on my own. Under that is Brad showing me how to do the generic version.
+
+//My solution:
+
+class intQueue {
+  var primes = [2, 3, 5, 7, 11, 13]
+  
+  func enqueueElement(prime: Int) {
+    primes.append(prime)
+  }
+  
+  func dequeueElement() -> Int {
+    let primeToReturn = primes[0]
+    primes.removeAtIndex(0)
+    return primeToReturn
+  }
+  
+  func listArrayElements(){
+    for prime in primes {
+      println(prime)
+    }
+  }
+}
+
+let intQueueTest = intQueue()
+intQueueTest.dequeueElement()
+intQueueTest.enqueueElement(17)
+intQueueTest.listArrayElements()
+
+
+//Brad's alteration:
+
+class Queue <T> {
+  var genericArray = [T]()
+  
+  func enqueueElement(element: T) {
+    genericArray.append(element)
+  }
+  
+  func dequeueElement() -> T {
+    let elementToReturn = genericArray[0]
+    genericArray.removeAtIndex(0)
+    return elementToReturn
+  }
+  
+  func listArrayElements(){
+    for element in genericArray {
+      println(element)
+    }
+  }
+}
+
+let myQueue = Queue<String>()
+
+let anotherQueue = Queue<Int>()
+
+let floatQueue = Queue<Float>()
+floatQueue.enqueueElement(2.0)
+floatQueue.enqueueElement(3.2)
+floatQueue.enqueueElement(46.7)
+floatQueue.dequeueElement()
+floatQueue.listArrayElements()
 
 
 

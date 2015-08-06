@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3420A2EB1B72961200B16774 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420A2EA1B72961200B16774 /* TweetTableViewCell.swift */; };
 		345BD3881B703BD9001B4162 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BD3871B703BD9001B4162 /* AppDelegate.swift */; };
-		345BD38A1B703BD9001B4162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BD3891B703BD9001B4162 /* ViewController.swift */; };
 		345BD38D1B703BD9001B4162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345BD38B1B703BD9001B4162 /* Main.storyboard */; };
 		345BD38F1B703BD9001B4162 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345BD38E1B703BD9001B4162 /* Images.xcassets */; };
 		345BD3921B703BD9001B4162 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345BD3901B703BD9001B4162 /* LaunchScreen.xib */; };
@@ -16,6 +16,12 @@
 		345BD3AB1B703C73001B4162 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BD3AA1B703C73001B4162 /* Tweet.swift */; };
 		345BD3AD1B703EF7001B4162 /* TweetJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BD3AC1B703EF7001B4162 /* TweetJSONParser.swift */; };
 		345BD3AF1B704423001B4162 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 345BD3AE1B704423001B4162 /* tweet.json */; };
+		34DC815D1B73D1C7001C4193 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC815C1B73D1C7001C4193 /* ViewController.swift */; };
+		34DC815F1B73D1F1001C4193 /* TweetDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC815E1B73D1F1001C4193 /* TweetDetailTableViewController.swift */; };
+		34DC81611B741B23001C4193 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34DC81601B741B23001C4193 /* TweetCell.xib */; };
+		34E044D41B7284E200061350 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E044D31B7284E200061350 /* egg.png */; };
+		34FDD4A91B7196E6000421B6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDD4A81B7196E6000421B6 /* LoginService.swift */; };
+		34FDD4AB1B7196F9000421B6 /* TwitterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDD4AA1B7196F9000421B6 /* TwitterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3420A2EA1B72961200B16774 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		345BD3821B703BD9001B4162 /* TweetThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345BD3861B703BD9001B4162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345BD3871B703BD9001B4162 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		345BD3891B703BD9001B4162 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		345BD38C1B703BD9001B4162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		345BD38E1B703BD9001B4162 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		345BD3911B703BD9001B4162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +48,12 @@
 		345BD3AA1B703C73001B4162 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		345BD3AC1B703EF7001B4162 /* TweetJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetJSONParser.swift; sourceTree = "<group>"; };
 		345BD3AE1B704423001B4162 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		34DC815C1B73D1C7001C4193 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34DC815E1B73D1F1001C4193 /* TweetDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailTableViewController.swift; sourceTree = "<group>"; };
+		34DC81601B741B23001C4193 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		34E044D31B7284E200061350 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg.png; sourceTree = "<group>"; };
+		34FDD4A81B7196E6000421B6 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		34FDD4AA1B7196F9000421B6 /* TwitterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 				345BD3A81B703BEE001B4162 /* Controllers */,
 				345BD3A71B703BE5001B4162 /* Views */,
 				345BD38E1B703BD9001B4162 /* Images.xcassets */,
+				34E044D31B7284E200061350 /* egg.png */,
 				345BD3901B703BD9001B4162 /* LaunchScreen.xib */,
 				345BD3851B703BD9001B4162 /* Supporting Files */,
 			);
@@ -124,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				345BD38B1B703BD9001B4162 /* Main.storyboard */,
+				34DC81601B741B23001C4193 /* TweetCell.xib */,
+				3420A2EA1B72961200B16774 /* TweetTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -131,7 +146,8 @@
 		345BD3A81B703BEE001B4162 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				345BD3891B703BD9001B4162 /* ViewController.swift */,
+				34DC815C1B73D1C7001C4193 /* ViewController.swift */,
+				34DC815E1B73D1F1001C4193 /* TweetDetailTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +157,8 @@
 			children = (
 				345BD3AA1B703C73001B4162 /* Tweet.swift */,
 				345BD3AC1B703EF7001B4162 /* TweetJSONParser.swift */,
+				34FDD4A81B7196E6000421B6 /* LoginService.swift */,
+				34FDD4AA1B7196F9000421B6 /* TwitterService.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -228,7 +246,9 @@
 				345BD38D1B703BD9001B4162 /* Main.storyboard in Resources */,
 				345BD3921B703BD9001B4162 /* LaunchScreen.xib in Resources */,
 				345BD38F1B703BD9001B4162 /* Images.xcassets in Resources */,
+				34E044D41B7284E200061350 /* egg.png in Resources */,
 				345BD3AF1B704423001B4162 /* tweet.json in Resources */,
+				34DC81611B741B23001C4193 /* TweetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +268,12 @@
 			files = (
 				345BD3AD1B703EF7001B4162 /* TweetJSONParser.swift in Sources */,
 				345BD3AB1B703C73001B4162 /* Tweet.swift in Sources */,
-				345BD38A1B703BD9001B4162 /* ViewController.swift in Sources */,
+				34DC815F1B73D1F1001C4193 /* TweetDetailTableViewController.swift in Sources */,
+				34FDD4A91B7196E6000421B6 /* LoginService.swift in Sources */,
 				345BD3881B703BD9001B4162 /* AppDelegate.swift in Sources */,
+				34FDD4AB1B7196F9000421B6 /* TwitterService.swift in Sources */,
+				34DC815D1B73D1C7001C4193 /* ViewController.swift in Sources */,
+				3420A2EB1B72961200B16774 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +471,7 @@
 				345BD3A31B703BD9001B4162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		345BD3A41B703BD9001B4162 /* Build configuration list for PBXNativeTarget "TweetThisTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +480,7 @@
 				345BD3A61B703BD9001B4162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
