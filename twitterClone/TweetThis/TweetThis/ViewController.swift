@@ -16,9 +16,14 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
+    
     println("ok")
     tableView.estimatedRowHeight = 76
     tableView.rowHeight = UITableViewAutomaticDimension
+    
+    tableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "TweetCell")
     
     LoginService.loginForTwitter { (errorDescription, account) -> (Void) in
       if let errorDescription = errorDescription {
@@ -37,6 +42,7 @@ class ViewController: UIViewController {
       }
     }
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.reloadData()
   }
 
@@ -44,6 +50,8 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  
 
 }
 
@@ -64,7 +72,8 @@ extension ViewController : UITableViewDataSource {
     cell.handleLabel.text = "@\(tweet.screenname)"
     let url = NSURL(string: tweet.profileImageURL)
     let data = NSData(contentsOfURL: url!)
-    cell.profileImage.image = UIImage(data: data!)
+    //cell.userProfileImageButton.imageView?.image = UIImage(data: data!)
+    //cell.profileImage.image = UIImage(data: data!)
     //cell.profileImage.image = UIImage(named: tweet.profileImageURL)
     
     return cell
@@ -72,12 +81,22 @@ extension ViewController : UITableViewDataSource {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showTweetDetails" {
-      let tweetDetailTableViewController = segue.destinationViewController as! TweetDetailTableViewController
+      let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
       let indexPath = self.tableView.indexPathForSelectedRow()
       let selectedRow = indexPath!.row
       let selectedTweet = self.tweets[selectedRow]
-      tweetDetailTableViewController.selectedTweet = selectedTweet
+      tweetDetailViewController.selectedTweet = selectedTweet
     }
+  }
+}
+
+//MARK: UITableViewDelegate
+
+extension ViewController : UITableViewDelegate {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    println("did select row")
+    self.performSegueWithIdentifier("showTweetDetails", sender: self)
   }
 }
 

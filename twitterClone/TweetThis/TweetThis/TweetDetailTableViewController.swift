@@ -11,10 +11,30 @@ import UIKit
 class TweetDetailTableViewController: UITableViewController, UITableViewDataSource {
   
   var selectedTweet : Tweet!
+  /*
+  @IBOutlet weak var retweetIconSquare: UIImageView!
+  
+  @IBOutlet weak var retweedByLabel: UILabel!
+  
+  @IBAction func tweetAuthorProfileImage(sender: UIButton) {
+  }
+  
+  @IBOutlet weak var tweetAuthorUserNameLabel: UILabel!
+  
+  @IBOutlet weak var tweetAuthorHandleLabel: UILabel!
+  
+  @IBOutlet weak var tweetText: UILabel!
+  
+  @IBOutlet weak var timeStampLabel: UILabel!
+  */
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("why")
+      tableView.estimatedRowHeight = 76
+      tableView.rowHeight = UITableViewAutomaticDimension
+      
+       // tableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "TweetCell")
+      println(selectedTweet.text)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,12 +64,16 @@ class TweetDetailTableViewController: UITableViewController, UITableViewDataSour
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       if indexPath.row == 0 {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FullTweetCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = "things that make you go"
+        let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! UITableViewCell
+        let tweet = selectedTweet
+//        cell.usernameLabel.text = tweet.username
+//        cell.tweetTextLabel.text = tweet.text
+//        cell.handleLabel.text = "@\(tweet.screenname)"
+        
         return cell
       }
         let cell = tableView.dequeueReusableCellWithIdentifier("ButtonsCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = "mmm"
+        
         return cell
       
     }
