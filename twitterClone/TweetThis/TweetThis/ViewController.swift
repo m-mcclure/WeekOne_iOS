@@ -17,6 +17,12 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    let bar:UINavigationBar! =  self.navigationController?.navigationBar
+    
+    bar.tintColor = UIColor.whiteColor()
+    bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    bar.shadowImage = UIImage()
+    bar.backgroundColor = UIColor(red: 0.349, green: 0.678, blue: 0.922, alpha: 1.00)
     
     
     println("ok")

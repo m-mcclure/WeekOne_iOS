@@ -37,6 +37,7 @@
                     <connections>
                         <outlet property="tableView" destination="LMB-mk-aiQ" id="GZm-4P-oWi"/>
                         <segue destination="3je-ck-Oy8" kind="show" identifier="showTweetDetails" id="Y5F-LN-K7Q"/>
+                        <segue destination="xcb-Oy-qtW" kind="show" identifier="goToUserProfile" id="bnc-ur-I2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,6 +83,7 @@
                                 </state>
                                 <connections>
                                     <action selector="tweetAuthorProfileImage:" destination="3je-ck-Oy8" eventType="touchUpInside" id="bYH-PN-rWE"/>
+                                    <segue destination="xcb-Oy-qtW" kind="show" identifier="goToUserProfile" id="z3c-CN-Ppj"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoW-sJ-a9H">
@@ -117,17 +119,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O7m-XL-nxg">
+                                <rect key="frame" x="0.0" y="225" width="600" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="feB-DD-Lv5">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="feB-DD-Lv5" id="a1C-yd-7Ze">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PH7-qO-ZYi" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" id="0Uc-VO-oTX"/>
                             <constraint firstItem="zDx-dC-1bb" firstAttribute="top" secondItem="J5m-Ef-DxZ" secondAttribute="bottom" constant="16" id="2EU-Fb-NoD"/>
                             <constraint firstItem="PH7-qO-ZYi" firstAttribute="top" secondItem="bVi-uR-9JQ" secondAttribute="bottom" id="5dV-Jl-0UX"/>
+                            <constraint firstItem="eP0-9i-0Vt" firstAttribute="top" secondItem="O7m-XL-nxg" secondAttribute="bottom" id="6ES-mv-cTo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zDx-dC-1bb" secondAttribute="trailing" id="6PF-4d-1il"/>
                             <constraint firstItem="eP0-9i-0Vt" firstAttribute="top" secondItem="PH7-qO-ZYi" secondAttribute="bottom" constant="376" id="8sg-V0-2oX"/>
                             <constraint firstItem="48J-aT-b5e" firstAttribute="top" secondItem="J5m-Ef-DxZ" secondAttribute="top" constant="-1" id="9va-BT-s0p"/>
                             <constraint firstItem="J5m-Ef-DxZ" firstAttribute="top" secondItem="xoW-sJ-a9H" secondAttribute="bottom" constant="8" id="BKF-Ke-sba"/>
                             <constraint firstItem="BQK-nN-EXQ" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" id="CAz-pm-HOe"/>
+                            <constraint firstItem="O7m-XL-nxg" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" constant="-16" id="CDd-de-Z4f"/>
                             <constraint firstItem="PH7-qO-ZYi" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" id="FJa-ee-fCW"/>
                             <constraint firstItem="BQK-nN-EXQ" firstAttribute="top" secondItem="PH7-qO-ZYi" secondAttribute="bottom" constant="-28.5" id="Fxv-y4-u60"/>
                             <constraint firstItem="PH7-qO-ZYi" firstAttribute="top" secondItem="bVi-uR-9JQ" secondAttribute="bottom" id="IUJ-LO-WSI"/>
@@ -135,9 +152,11 @@
                             <constraint firstItem="J5m-Ef-DxZ" firstAttribute="trailing" secondItem="xoW-sJ-a9H" secondAttribute="trailing" id="Of7-c9-c8c"/>
                             <constraint firstItem="RCB-KZ-nVI" firstAttribute="leading" secondItem="J5m-Ef-DxZ" secondAttribute="trailing" constant="8" id="VLj-R0-HHU"/>
                             <constraint firstItem="zDx-dC-1bb" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" id="XdE-hr-dwc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O7m-XL-nxg" secondAttribute="trailing" constant="-16" id="ZhY-Ku-buF"/>
                             <constraint firstItem="xoW-sJ-a9H" firstAttribute="top" secondItem="bVi-uR-9JQ" secondAttribute="bottom" id="bRh-zF-Z0O"/>
                             <constraint firstItem="RCB-KZ-nVI" firstAttribute="top" secondItem="48J-aT-b5e" secondAttribute="bottom" id="cpq-O8-a0n"/>
                             <constraint firstItem="BQK-nN-EXQ" firstAttribute="top" secondItem="zDx-dC-1bb" secondAttribute="bottom" constant="8" id="d5F-jc-MgO"/>
+                            <constraint firstItem="O7m-XL-nxg" firstAttribute="top" secondItem="PH7-qO-ZYi" secondAttribute="bottom" id="kXF-o6-9a8"/>
                             <constraint firstItem="J5m-Ef-DxZ" firstAttribute="leading" secondItem="txy-JX-K8w" secondAttribute="leadingMargin" id="pj7-uQ-vPS"/>
                             <constraint firstAttribute="trailing" secondItem="PH7-qO-ZYi" secondAttribute="trailing" id="x1j-dL-hnf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z8f-qc-LgD" secondAttribute="trailing" id="yj2-DH-Gd8"/>
@@ -165,6 +184,44 @@
             </objects>
             <point key="canvasLocation" x="1701" y="-468"/>
         </scene>
+        <!--User Prolie View Controller-->
+        <scene sceneID="UQQ-iY-MyW">
+            <objects>
+                <viewController id="xcb-Oy-qtW" customClass="UserProlieViewController" customModule="TweetThis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jye-xp-tPv"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6j-2V-I4Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdE-bM-0J4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nd-EM-NZL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
+                                <color key="backgroundColor" red="0.89326518499999996" green="0.73799800900000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="emd-Mz-UZf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Nd-EM-NZL" firstAttribute="top" secondItem="bdE-bM-0J4" secondAttribute="topMargin" id="1yX-gI-Kc9"/>
+                            <constraint firstItem="6Nd-EM-NZL" firstAttribute="leading" secondItem="bdE-bM-0J4" secondAttribute="leadingMargin" constant="-16" id="7kN-et-NTY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Nd-EM-NZL" secondAttribute="trailing" constant="-16" id="Cih-s2-NHW"/>
+                            <constraint firstItem="6Nd-EM-NZL" firstAttribute="top" secondItem="jye-xp-tPv" secondAttribute="bottom" id="zCJ-70-UZc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zCJ-70-UZc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hN-aW-eP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="311"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qi3-fH-coX">
             <objects>
@@ -187,4 +244,7 @@
     <resources>
         <image name="egg" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bnc-ur-I2f"/>
+    </inferredMetricsTieBreakers>
 </document>
