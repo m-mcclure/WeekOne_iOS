@@ -15,7 +15,6 @@ class UserProfileViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
 
- 
   @IBOutlet weak var userProfileImage: UIImageView!
   @IBOutlet weak var userBackgroundImage: UIImageView!
   @IBOutlet weak var userFullName: UILabel!
@@ -25,8 +24,6 @@ class UserProfileViewController: UIViewController {
   @IBOutlet weak var userURL: UILabel!
   @IBOutlet weak var userFollowing: UILabel!
   @IBOutlet weak var userFollowers: UILabel!
-  
-  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +61,7 @@ class UserProfileViewController: UIViewController {
 //            
 //          })
 //        }
-      
 
-      
       println(userTweets.count)
       tableView.dataSource = self
       tableView.delegate = self
@@ -90,8 +85,6 @@ extension UserProfileViewController : UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetTableViewCell
-    
-    
     
     return cell
   }

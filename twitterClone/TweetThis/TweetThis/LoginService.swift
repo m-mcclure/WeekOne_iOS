@@ -17,7 +17,6 @@ class LoginService {
       if let error = error {
         completionHandler("please sign in", nil)
         
-        
         return
       } else {
         if granted {

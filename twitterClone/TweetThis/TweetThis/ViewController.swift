@@ -18,9 +18,7 @@ class ViewController: UIViewController {
   func setNavBarStyle() {
     
     let bar:UINavigationBar! =  self.navigationController?.navigationBar
-    
     UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-    
     bar.tintColor = UIColor.whiteColor()
     bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
     bar.shadowImage = UIImage()
@@ -30,14 +28,10 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   
-    
     setNavBarStyle()
-    
-    
     
     tableView.estimatedRowHeight = 76
     tableView.rowHeight = UITableViewAutomaticDimension
-    
     tableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "TweetCell")
     
     LoginService.loginForTwitter { (errorDescription, account) -> (Void) in
@@ -46,13 +40,11 @@ class ViewController: UIViewController {
       }
       if let account = account {
         TwitterService.sharedService.account = account
-
         TwitterService.tweetsFromHomeTimeline(account, completionHandler: { (errorDescription, tweets) -> (Void) in
           if let tweets = tweets {
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
               self.tweets = tweets
               self.tableView.reloadData()
-             
             })
           }
         })
@@ -71,9 +63,6 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
-  
-
 }
 
 //MARK: UITableViewDataSource
@@ -94,7 +83,10 @@ extension ViewController : UITableViewDataSource {
     let data = NSData(contentsOfURL: url!)
     let userProfileImage = UIImage(data: data!)
     cell.userProfileImageButton.setBackgroundImage(userProfileImage, forState: .Normal)
-   
+    if tweet.retweeted == true {
+      cell.retweetIcon.image = UIImage(named: "retweet")
+      //finish setting up retweet label
+    }
     
     return cell
   }

@@ -15,4 +15,5 @@ struct Tweet {
   let id : String
   let userBackgroundImageURL : String
   let profileImageURL : String
+  let retweeted : Bool
 }

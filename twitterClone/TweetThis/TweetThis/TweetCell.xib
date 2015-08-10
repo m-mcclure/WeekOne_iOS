@@ -190,6 +190,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="handleLabel" destination="ghe-eA-3qb" id="CKp-xJ-FMc"/>
+                <outlet property="retweetIcon" destination="9zG-pR-cTX" id="lMi-gF-Snf"/>
+                <outlet property="retweetedByLabel" destination="HdD-Lt-cUE" id="9i6-pe-7Gq"/>
                 <outlet property="tweetTextLabel" destination="3lb-Lt-5eq" id="L2T-12-i8c"/>
                 <outlet property="userProfileImageButton" destination="tJC-YY-iZh" id="Nup-Ru-tOj"/>
                 <outlet property="usernameLabel" destination="VYG-mf-QQb" id="nnG-Y7-WA3"/>
