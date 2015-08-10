@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matthew McClure. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Tweet {
   let text : String?
@@ -15,5 +15,6 @@ struct Tweet {
   let id : String
   let userBackgroundImageURL : String
   let profileImageURL : String
-  let retweeted : Bool
+  var profileImage : UIImage?
+  //let retweeted : Bool
 }

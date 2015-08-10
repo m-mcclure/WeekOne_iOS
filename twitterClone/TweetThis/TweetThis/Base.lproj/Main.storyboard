@@ -202,7 +202,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nd-EM-NZL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="25200F9B-EC18-4724-8122-B48BFD26D539" translatesAutoresizingMaskIntoConstraints="NO" id="Hja-MD-NiZ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CBFAE410-8E0A-4BC1-B82A-F1DDAFB47B21" translatesAutoresizingMaskIntoConstraints="NO" id="Hja-MD-NiZ">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     </imageView>
                                 </subviews>
@@ -419,7 +419,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Qi3-fH-coX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F3e-Eh-q45" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PfI-iw-oKz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -432,12 +431,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="24Q-39-igh"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3e-Eh-q45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="317" y="-468"/>
         </scene>
     </scenes>
     <resources>
-        <image name="25200F9B-EC18-4724-8122-B48BFD26D539" width="600" height="300">
+        <image name="CBFAE410-8E0A-4BC1-B82A-F1DDAFB47B21" width="600" height="300">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

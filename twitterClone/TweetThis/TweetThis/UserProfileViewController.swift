@@ -50,22 +50,22 @@ class UserProfileViewController: UIViewController {
       tableView.rowHeight = UITableViewAutomaticDimension
       
       tableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "TweetCell")
-      
-   //      let userID = passedTweet.screenname
-//      let account = TwitterService.sharedService.account
-//      TwitterService.tweetsFromUserTimeline(account, userID: userID) completionHandler: { (errorDescription, tweets) -> (Void) in
-//        if let tweets = tweets {
-//          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//            self.userTweets = tweets
-//            self.tableView.reloadData()
-//            
-//          })
-//        }
+      let userID = passedTweet.screenname
+      println(userID)
+      let errorDescription = "error msg here"
+      TwitterService.tweetsFromUserTimeline(userID, completionHandler: { (errorDescription, tweets) -> (Void) in
+        if let tweets = tweets {
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            self.userTweets = tweets
+            self.tableView.reloadData()
+            println("tweetsFromUserTimeline() triggered")
+          })
+        }
+      })
 
-      println(userTweets.count)
+
       tableView.dataSource = self
       tableView.delegate = self
-      tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

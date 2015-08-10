@@ -52,7 +52,6 @@ class ViewController: UIViewController {
     }
     tableView.dataSource = self
     tableView.delegate = self
-    tableView.reloadData()
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -74,7 +73,9 @@ extension ViewController : UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetTableViewCell
-    let tweet = tweets[indexPath.row]
+    cell.tag++
+    let tag = cell.tag
+    var tweet = tweets[indexPath.row]
     //cell.textLabel?.text = tweet.text
     cell.usernameLabel.text = tweet.username
     cell.tweetTextLabel.text = tweet.text
@@ -83,10 +84,42 @@ extension ViewController : UITableViewDataSource {
     let data = NSData(contentsOfURL: url!)
     let userProfileImage = UIImage(data: data!)
     cell.userProfileImageButton.setBackgroundImage(userProfileImage, forState: .Normal)
-    if tweet.retweeted == true {
-      cell.retweetIcon.image = UIImage(named: "retweet")
-      //finish setting up retweet label
+//    if tweet.retweeted == true {
+//      cell.retweetIcon.image = UIImage(named: "retweet")
+//      
+//      //finish setting up retweet label
+//    }
+    if let profileImage = tweet.profileImage {
+      cell.userProfileImageButton.setBackgroundImage(profileImage, forState: .Normal)
+    } else {
+      
+      imageQueue.addOperationWithBlock({ () -> Void in
+        if let imageURL = NSURL(string: tweet.profileImageURL),
+          imageData = NSData(contentsOfURL: imageURL),
+          image = UIImage(data: imageData) {
+            var size : CGSize
+            switch UIScreen.mainScreen().scale {
+            case 2:
+              size = CGSize(width: 160, height: 160)
+            case 3:
+              size = CGSize(width: 240, height: 240)
+            default:
+              size = CGSize(width: 80, height: 80)
+            }
+            
+            let resizedImage = ImageResizer.resizeImage(image, size: size)
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+              tweet.profileImage = resizedImage
+              self.tweets[indexPath.row] = tweet
+              if cell.tag == tag {
+                cell.userProfileImageButton.setBackgroundImage(resizedImage, forState: .Normal)
+              }
+            })
+        }
+      })
     }
+
     
     return cell
   }
