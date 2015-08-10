@@ -11,17 +11,18 @@ import Accounts
 import Social
 
 class TwitterService {
+  
+  static let sharedService = TwitterService()
+  
+  var account : ACAccount?
+  
+  private init() {}
+  
   class func tweetsFromHomeTimeline(account: ACAccount, completionHandler: (String?, [Tweet]?) -> (Void)) {
     
     let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")!, parameters: nil)
-    //SLRequest() template shows String! in forServiceType: ... why did you use a type rather than a string?
-    //we passed nil to parameters: , but an example of when we might pass something other than nil?
-    //any reason .GET is in all caps?
-    //why did we need to ! the NSURL
-    request.account = account
-    // the account is the one we passed in as first param?
+    request.account = self.sharedService.account
     request.performRequestWithHandler { (data, response, error) -> Void in
-      //above, where do data, response, error come from?
       if let error = error {
         completionHandler("couldn't connect to server", nil)
       } else {
@@ -29,7 +30,6 @@ class TwitterService {
         switch response.statusCode {
         case 200...299:
           let tweets = TweetJSONParser.tweetsFromJSONData(data)
-          //again where does "data" come from?
           completionHandler(nil, tweets)
         case 400...499:
           completionHandler("it's our fault", nil)
@@ -38,8 +38,29 @@ class TwitterService {
         default:
           completionHandler("error occurred", nil)
         }
-        //what would happen if the completionHandler() weren't there in any of the above lines?
-        //below... you mentioned previously that a long line of diagonal } } } indicated there might be a cleaner way to code? at how many } do you usually draw the line?
+      }
+    }
+  }
+  class func tweetsFromUserTimeline(account: ACAccount, userID: String, completionHandler: (String?, [Tweet]?) -> (Void)) {
+    let userURL = "https://api.twitter.com/1.1/statuses/user_timeline.json?" + "\(userID)"
+    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: userURL)!, parameters: nil)
+    request.account = self.sharedService.account
+    request.performRequestWithHandler { (data, response, error) -> Void in
+      if let error = error {
+        completionHandler("couldn't connect to server", nil)
+      } else {
+        println(response.statusCode)
+        switch response.statusCode {
+        case 200...299:
+          let tweets = TweetJSONParser.tweetsFromJSONData(data)
+          completionHandler(nil, tweets)
+        case 400...499:
+          completionHandler("it's our fault", nil)
+        case 500...599:
+          completionHandler("it's the server's fault", nil)
+        default:
+          completionHandler("error occurred", nil)
+        }
       }
     }
   }

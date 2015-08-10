@@ -13,5 +13,6 @@ struct Tweet {
   let username : String
   let screenname : String
   let id : String
-  let profileImageURL : String 
+  let userBackgroundImageURL : String
+  let profileImageURL : String
 }

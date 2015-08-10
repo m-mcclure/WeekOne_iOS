@@ -20,9 +20,9 @@ class TweetJSONParser {
         
         if let text = tweetObject["text"] as? String,
         user = tweetObject["user"] as? [String : AnyObject],
-          username = user["name"] as? String, profileImageURL = user["profile_image_url_https"] as? String, id = user["id_str"] as? String, screenname = user["screen_name"] as? String {
+          username = user["name"] as? String, profileImageURL = user["profile_image_url_https"] as? String, id = user["id_str"] as? String, backgroundImageURL = user["profile_banner_url"] as? String, screenname = user["screen_name"] as? String {
             let biggerProfileImageURL = profileImageURL.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger") as? String
-            let tweet = Tweet(text: text, username: username, screenname: screenname, id: id, profileImageURL: biggerProfileImageURL!)
+            let tweet = Tweet(text: text, username: username, screenname: screenname, id: id, userBackgroundImageURL: backgroundImageURL, profileImageURL: biggerProfileImageURL!)
             tweets.append(tweet)
         }
       }

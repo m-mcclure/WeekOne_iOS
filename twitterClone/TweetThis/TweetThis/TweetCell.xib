@@ -64,9 +64,6 @@
                         <state key="normal" backgroundImage="egg">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <connections>
-                            <action selector="userProfileImageButton:" destination="hiB-gw-Bq7" eventType="touchUpInside" id="5cz-J7-fa3"/>
-                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-pR-cTX">
                         <rect key="frame" x="43" y="8" width="20" height="20"/>
