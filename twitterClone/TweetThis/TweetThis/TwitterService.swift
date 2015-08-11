@@ -41,8 +41,9 @@ class TwitterService {
       }
     }
   }
-  class func tweetsFromUserTimeline(userID: String, completionHandler: (String?, [Tweet]?) -> (Void)) {
-    let userURL = "https://api.twitter.com/1.1/statuses/user_timeline.json?" + "/\(userID)"
+  class func tweetsFromUserTimeline(screenname: String, completionHandler: (String?, [Tweet]?) -> (Void)) {
+    let userURL = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" + "\(screenname)"
+    println(userURL)
     let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: userURL)!, parameters: nil)
     request.account = self.sharedService.account
     request.performRequestWithHandler { (data, response, error) -> Void in

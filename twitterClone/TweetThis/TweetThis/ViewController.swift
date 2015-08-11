@@ -76,7 +76,6 @@ extension ViewController : UITableViewDataSource {
     cell.tag++
     let tag = cell.tag
     var tweet = tweets[indexPath.row]
-    //cell.textLabel?.text = tweet.text
     cell.usernameLabel.text = tweet.username
     cell.tweetTextLabel.text = tweet.text
     cell.handleLabel.text = "@\(tweet.screenname)"
